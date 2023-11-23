@@ -12,6 +12,7 @@ Suggest user to increase/decrease weight
 import java.util.Scanner;
 
 public class Lab_2_3 {
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Please input your height (m): ");
@@ -45,9 +46,9 @@ public class Lab_2_3 {
 
     public static float changeWeightCalc(float weight, float height, float BMI) {
         if (BMI < 18.5) {
-            return (float) (18.5 * height * height) - weight;
+            return (18.5f * height * height) - weight;
         } else if (BMI > 24.9) {
-            return (float) (24.9 * height * height) - weight;
+            return (24.9f * height * height) - weight;
         }
 
         return 0;
