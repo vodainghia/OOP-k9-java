@@ -32,6 +32,5 @@ public class Lab_3_3 {
         int[] intArr = {12, 34, 1, 16, 28};
 
         System.out.println(Arrays.toString(mergeSort(intArr)));
-        //Arrays.stream(mergeSort(intArr)).forEach(System.out::println);
     }
 }
