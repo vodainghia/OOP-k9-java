@@ -10,6 +10,8 @@ public class ArrayListLearning {
         //CRUD
         myArrList.add(1);
         myArrList.add(1, 2);
+        myArrList.add(4);
+        myArrList.add(4);
 
         for (int i = 0; i < myArrList.size(); i++) {
             System.out.println(myArrList.get(i));
@@ -18,5 +20,9 @@ public class ArrayListLearning {
         for (int integer : myArrList) {
             System.out.println(integer);
         }
+
+        myArrList.remove(1);
+
+        System.out.println(myArrList);
     }
 }
