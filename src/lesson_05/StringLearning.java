@@ -1,5 +1,7 @@
 package lesson_05;
 
+import java.util.Arrays;
+
 public class StringLearning {
     public static void main(String[] args) {
         String myName1 = "Teo"; // Literal declaration (Khai báo tường minh)
@@ -28,10 +30,44 @@ public class StringLearning {
         }
 
         // Immutable: không thay đổi, nhưng khác với final là hoàn toàn không thay đổi, còn immutable thì cho phép clone giá trị ra vùng nhớ khác để thay đổi => giá trị gốc không thay đổi.
-        String badWordContainer = " bad, very bad, sth sth, bad ";
+        String badWordContainer = "   bad, very bad, sth sth, bad ";
         String filteredStr = badWordContainer.replace("bad", "b**");
 
         System.out.println(badWordContainer); // bad, very bad, sth sth, bad
         System.out.println(filteredStr); // b**, very b**, sth sth, b**
+
+        // trim()
+        System.out.println(badWordContainer.trim()); // "bad, very bad, sth sth, bad"
+
+        // substring(), indexOf()
+        System.out.println(badWordContainer.indexOf("♥")); // -1
+        System.out.println(badWordContainer.substring(3, 6)); // bad
+        System.out.println(badWordContainer.substring(badWordContainer.length() - 4, badWordContainer.length())); // bad
+
+        // split(): return an array of string
+        String[] splitStr = badWordContainer.split("");
+        System.out.println(Arrays.toString(splitStr)); // [ ,  ,  , b, a, d, ,,  , v, e, r, y,  , b, a, d, ,,  , s, t, h,  , s, t, h, ,,  , b, a, d,  ]
+
+        String[] splitStr2 = badWordContainer.split(",");
+        System.out.println(Arrays.toString(splitStr2)); // [   bad,  very bad,  sth sth,  bad ]
+
+        // Regex | Regular Expression
+        String myCookingTime = "  105 mins   ";
+        String myCookingTimeNum = myCookingTime.replaceAll("[^0-9]", "");
+        System.out.println(myCookingTimeNum); // 105
+
+        // TODO: Pattern and Matcher
+
+        int cookingTime = Integer.valueOf(myCookingTimeNum); // 105
+        System.out.println("Time: " + (cookingTime + 1)); // 106. Noticed that the brackets have more priority
+        System.out.println("Time: " + cookingTime + 1); // 1051. All elements will be converted to string respectively
+
+        // Concatenation
+        String s1 = "Hello";
+        String s2 = "Nghia";
+        System.out.println(s1.concat(s2));
+        System.out.println(s1 + s2);
+
+        //StringBuilder
     }
 }
