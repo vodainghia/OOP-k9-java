@@ -3,24 +3,20 @@ package labs.lab_07.lab_07_2;
 import java.security.SecureRandom;
 
 public class Animal {
-    private int maxSpeed;
+    private int speed;
 
     public Animal() {
     }
 
     public Animal(int maxSpeed) {
-        this.maxSpeed = maxSpeed;
+        this.speed = speed(maxSpeed);
     }
 
-    public int getMAX_SPEED() {
-        return maxSpeed;
+    public int getSpeed() {
+        return speed;
     }
 
-    public void setMAX_SPEED(int maxSpeed) {
-        this.maxSpeed = maxSpeed;
-    }
-
-    public int speed() {
+    public int speed(int maxSpeed) {
         return new SecureRandom().nextInt(maxSpeed);
     }
 
