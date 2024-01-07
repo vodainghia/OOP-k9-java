@@ -13,8 +13,8 @@ public class Lab_6_1 {
     static int calculateTotalMinutes(String input) {
         int totalMins = 0;
 
-        String hourPattern = "(\\d+)hrs";
-        String minutePattern = "(\\d+) minutes";
+        String hourPattern = "(\\d+)\\s*hrs";
+        String minutePattern = "(\\d+)\\s*minutes";
 
         Pattern hourPatternObj = Pattern.compile(hourPattern);
         Pattern minutePatternObj = Pattern.compile(minutePattern);
