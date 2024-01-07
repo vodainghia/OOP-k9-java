@@ -56,6 +56,6 @@ public class TestAnimalRacing {
         List<Animal> animalList = new ArrayList<>(Arrays.asList(tiger, horse, corgi, chihuahua, falcon, eagle1, eagle2, pigeon, snake));
 
         RacingController racingController = new RacingController();
-        racingController.getTheWinner(animalList);
+        System.out.println(racingController.getWinner(animalList));
     }
 }

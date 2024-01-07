@@ -3,7 +3,7 @@ package labs.lab_08;
 import java.security.SecureRandom;
 
 public class Animal {
-    private int maxSpeed;
+    private int speed;
     private boolean flyable;
     private String name;
 
@@ -11,7 +11,7 @@ public class Animal {
     }
 
     public static class Builder {
-        private int maxSpeed;
+        private int speed;
         private boolean flyable;
         private String name;
         private AnimalType type;
@@ -28,28 +28,24 @@ public class Animal {
 
         public Builder setType(AnimalType type) {
             this.type = type;
-            switch (type) {
-                case TIGER -> this.maxSpeed = 100;
-                case HORSE -> this.maxSpeed = 75;
-                case DOG -> this.maxSpeed = 60;
-                case FALCON, EAGLE -> this.maxSpeed = 200;
-                case PIGEON -> this.maxSpeed = 50;
-                case SNAKE -> this.maxSpeed = 20;
-                default -> throw new IllegalArgumentException("Unknown animal type: " + type);
-            }
+            this.speed = speed(type.getMaxSpeed());
             return this;
         }
 
+        public static int speed(int maxSpeed) {
+            return new SecureRandom().nextInt(Math.max(0, maxSpeed));
+        }
+
         public Animal build() {
-            if (maxSpeed < 0)
-                throw new IllegalArgumentException("Maximum speed must be non-negative.");
+            if (speed < 0 || name == null || name.isEmpty() || type == null)
+                throw new IllegalArgumentException("Invalid animal properties.");
             return new Animal(this);
         }
     }
 
     protected Animal(Builder builder) {
         name = builder.name;
-        maxSpeed = builder.maxSpeed;
+        speed = builder.speed;
         flyable = builder.flyable;
     }
 
@@ -61,11 +57,11 @@ public class Animal {
         return name;
     }
 
-    public int speed() {
-        return new SecureRandom().nextInt(Math.max(0, maxSpeed));
+    public int getSpeed() {
+        return speed;
     }
 
-    public void printWinnerMessage(String name, int speed) {
-        System.out.printf("Winner is %s, with speed: %d", name, speed);
+    public String getWinnerMessage() {
+        return String.format("Winner is %s, with speed: %d", name, speed);
     }
 }
