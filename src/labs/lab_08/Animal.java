@@ -28,7 +28,6 @@ public class Animal {
 
         public Builder setType(AnimalType type) {
             this.type = type;
-            this.speed = speed(type.getMaxSpeed());
             return this;
         }
 
@@ -37,8 +36,10 @@ public class Animal {
         }
 
         public Animal build() {
-            if (speed < 0 || name == null || name.isEmpty() || type == null)
+            if (speed < 0 || name == null || name.isEmpty() || type == null) {
                 throw new IllegalArgumentException("Invalid animal properties.");
+            }
+            this.speed = speed(type.getMaxSpeed());
             return new Animal(this);
         }
     }
