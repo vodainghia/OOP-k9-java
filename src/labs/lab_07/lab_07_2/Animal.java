@@ -20,8 +20,8 @@ public class Animal {
         return new SecureRandom().nextInt(maxSpeed);
     }
 
-    public void printWinnerMessage(int speed) {
+    public String getWinnerMessage(int speed) {
         String animalName = getClass().getSimpleName();
-        System.out.printf("Winner is %s, with speed: %d", animalName, speed);
+        return String.format("Winner is %s, with speed: %d", animalName, speed);
     }
 }

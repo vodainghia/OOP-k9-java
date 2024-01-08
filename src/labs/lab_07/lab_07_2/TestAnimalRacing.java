@@ -8,6 +8,7 @@ public class TestAnimalRacing {
         Animal tiger = new Tiger();
         Animal dog = new Dog();
         RacingController racingController = new RacingController();
-        racingController.getTheWinner(Arrays.asList(horse, tiger, dog));
+        String winnerMsg = racingController.getWinner(Arrays.asList(horse, tiger, dog));
+        System.out.println(winnerMsg);
     }
 }
