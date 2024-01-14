@@ -1,8 +1,5 @@
 package lesson_12;
 
-import java.net.ConnectException;
-import java.sql.SQLDataException;
-
 // Un-expected
 public class Calculator {
     public int divide(int a, int b) {
