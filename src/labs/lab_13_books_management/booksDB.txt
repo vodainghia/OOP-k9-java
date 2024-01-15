@@ -1,0 +1,7 @@
+A123;Bible;Various Authors;-1600
+C01;Dau;Viet Thu;2022
+V2221;Vong New Edition;Duong Kieu;2024
+ANB12;Harry Potter;J.K. Rowling;1990
+1;Dummy;Someone;2024
+C011;Kinh Van Hoa;Nguyen Nhat Anh;1992
+H81;& Habits;PACE;2002
